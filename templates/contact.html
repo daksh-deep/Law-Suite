@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Suite - Contacts</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <style>
+        nav {
+            display: block;
+            opacity: 1;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            transition: opacity 0.2s ease;
+        }
+
+        nav a {
+            color: #797a6f;
+        }
+
+        nav a:hover {
+            color: #fffce1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main" data-scroll-container>
+
+        <!-- Navigation -->
+        <nav class="fixed w-full z-20 top-0 start-0 backdrop-blur" style="position: absolute; color: #fffce1;">
+            <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+                <div class="text-lg font-bold" id="nav">
+                    L <span style="color: #37d151;">S</span>
+                </div>
+                <div class="space-x-6">
+                    <a href="/">Home</a>
+                </div>
+            </div>
+            <hr id="nav" style="border-top: 1px solid #797a6f;">
+        </nav>
+
+        <br><br>
+        <!-- Contact Us Page -->
+        <div id="page3" data-scroll-section data-scroll-speed="2" style="color: #fffce1;">
+            <div class="page3-content">
+                <div class="page3-text">
+                    <br>
+                    <h2>Our <span style="color: #ff00ff;">Contacts</span></h2>
+                    <h2 style="font-size: 2rem;">Emails<span< /h2>
+                            <p style="color: #8d8e88;">
+                                dakshsaxena04@gmail.com <br>
+                                yashvi.arya7504@gmail.com
+                            </p><br>
+                            <h2 style="font-size: 2rem;">Phone Numbers<span< /h2>
+                                    <p style="color: #8d8e88;">
+                                        Daksh Deep: +91 8936961926 <br>
+                                        Yashvi Arya: +91 7223935117
+                                    </p><br>
+                                    <h2>Before you <span style="color: #ff00ff;"> Contact</span></h2>
+                                            <p style="color: #8d8e88;">
+                                                For business inquiries or collaboration opportunities, please contact us. We kindly ask that all communications be limited to these professional matters. Thank you for your understanding.
+                                            </p><br>
+                </div>
+            </div>
+        </div>
+
+        <hr class="separator-line" data-scroll-section>
+
+        <!-- Footer  -->
+        <footer class="footer" data-scroll-section>
+            <div class="footer-content">
+                <div class="footer-section-head">
+                    <h4>Law <span style="color: #37d151;">Suite</span></h4>
+                    <p>Unlock <em>Justice</em> in a snap</p>
+                    <p>&copy Law Suite 2024</p>
+                </div>
+                <div class="footer-section legal">
+                    <h4><span style="color: #ec780a;">Legal</span></h4>
+                    <ul>
+                        <li><a href="terms">Terms of use</a></li>
+                        <li><a href="https://www.mha.gov.in/en" target="_blank">Ministry of Home Affairs</a></li>
+                        <li><a href="https://www.mha.gov.in/en/commoncontent/new-criminal-laws" target="_blank">New
+                                Criminal Laws</a></li>
+                        <li><a href="https://ecourts.gov.in/ecourts_home/" target="_blank">eCourt</a></li>
+                        <li><a href="https://filing.ecourts.gov.in/pdedev/" target="_blank">eFilling Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section company">
+                    <h4><span style="color: #ff00ff;">Company</span></h4>
+                    <ul>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section socials">
+                    <h4><span style="color: rgb(103, 123, 255);">Socials</span></h4>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/daksh-deep-791a1a298/" target="_blank">Daksh's LinkedIn</a></li>
+                        <li><a href="https://www.linkedin.com/in/yashvi-arya-1455a7230/" target="_blank">Yashvi's LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- -- Scroll to top button --  -->
+        <button id="scroll-to-top-btn" title="Go to top">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18">
+                </path>
+            </svg>
+        </button>
+
+
+        <!-- JavaScripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script> -->
+        <script src="../static/script.js"></script>
+</body>
+
+</html>
