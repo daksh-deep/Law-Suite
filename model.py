@@ -6,8 +6,8 @@ from nltk.stem import WordNetLemmatizer
 import pandas as pd
 
 # Load vectorizer and model
-vectorizer = joblib.load('vectorizer.pkl')
-model = joblib.load('bns_model.pkl')
+vectorizer = joblib.load('models/bns_vectorizer.pkl')
+model = joblib.load('models/bns_model.pkl')
 
 nltk.download('stopwords')
 nltk.download('wordnet')

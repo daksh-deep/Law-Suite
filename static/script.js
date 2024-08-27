@@ -1,8 +1,8 @@
 // Initialize Locomotive Scroll
-// const scroll = new LocomotiveScroll({
-//     el: document.querySelector("#main"),
-//     smooth: true,
-//   });
+const scroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true,
+  });
 
 // Prevent default context menu
 document.addEventListener('contextmenu', function (e) {
@@ -152,39 +152,35 @@ function expireAnimationStorage(manualExpire) {
     }
 }
 
+
 // Call the functions
 breakText();
 expireAnimationStorage(false);
 callAnimation(true, true);
 
 
-// AJAX Calls 
 $(document).ready(function() {
     var textarea = $('#prompt-textarea');
     var resultContainer = $('#result-container');
-    
-    // Function to validate the textarea
-    function validateTextarea() {
-        // No additional changes needed here for your requirements
-    }
-
-    // Event listener for textarea input
-    textarea.on('input', function() {
-        // No additional changes needed here for your requirements
-    });
 
     // Form submission
     $('#predict-form').on('submit', function(event) {
         event.preventDefault();
+        
         if (textarea.val().trim() === '') {
             // Prevent form submission if textarea is empty
-            event.preventDefault(); // Prevent form submission
-            
-            // Display the message in the result container
             resultContainer.html('<h1 class="text-red-400 text-center">Please enter a prompt and try again.</h1>');
             return;
         }
 
+        // Display the loading Animation
+        resultContainer.html(`
+            <div class="flex justify-center items-center mt-14 mb-7">
+              <span class="loader-alt"></span>
+              <span class="ml-4 text-[#fffce1] alt-loader-text">Generating Results...</span>
+            </div>
+          `);
+          
         // Proceed with AJAX request if textarea has content
         $.ajax({
             type: 'POST',
@@ -206,11 +202,12 @@ $(document).ready(function() {
                     tableHtml += '</tbody></table>';
 
                     resultContainer.html(tableHtml);
+                    scroll.update();
                 }
             },
             error: function(xhr, status, error) {
                 console.error('Error:', error);
-                if(error = "The site is under maintenance. Please try again later."){
+                if(error === "The site is under maintenance. Please try again later.") {
                     resultContainer.html('<p class="text-center text-red-400">The site is under maintenance. Please try again later.</p>');
                 } else {
                     resultContainer.html('<p class="text-center text-red-400">There was an error processing your request.</p>');
@@ -219,6 +216,4 @@ $(document).ready(function() {
         });
     });
 });
-
-
 

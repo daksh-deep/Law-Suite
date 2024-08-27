@@ -39,6 +39,7 @@ def predict():
         bns_predicted=[r['Predicted BNS'] for r in results], 
         clause_predicted=[r['Act'] for r in results]
     )
+    loading = False
     return jsonify({'results': results})
 
 @app.route('/terms')
@@ -58,10 +59,6 @@ def contact():
     if maintenance_mode:
         return render_template('maintenance.html')
     return render_template('contact.html')
-
-@app.route('/maintenance')
-def maintenance():
-    return render_template('maintenance.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7000, debug=True)
